@@ -13,8 +13,8 @@ pipeline {
 
         stage('Test') {
             steps {
-	    withMaven(maven : 'MAVEN_HOME')
-	    sh 'mvn test'{
+	    withMaven(maven : 'MAVEN_HOME'){
+	    sh 'mvn test'
                 echo 'Testing..'
 		}
             }
@@ -24,7 +24,7 @@ pipeline {
 	    withMaven(maven : 'MAVEN_HOME'){
 	    sh 'mvn deploy'
                 echo 'Deploying....'
-		}:
+		}
             }
         }
     }
